@@ -21,12 +21,12 @@
             <div class="row gy-5">
                 <div class="col-lg-6">
                     <div class="game-details-left">
-                        <div id="coin-flip-cont">
-                            <div class="coins-wrapper">
-                                <div class="front"><img src="/assets/images/game/head.png" alt="game"></div>
-                                <div class="back"><img src="/assets/images/game/tail.png" alt="game"></div>
-                            </div>
+                    <div id="coin-flip-cont">
+                        <div class="coins-wrapper">
+                           <div class="front"><img id="coinHeadImage" src="/assets/images/game/head.png" alt="game"></div>
+                           <div class="back"><img id="coinTailImage" src="/assets/images/game/tail.png" alt="game"></div>
                         </div>
+                    </div>
                         <div class="cd-ft"></div>
                     </div>
                 </div>
@@ -40,107 +40,25 @@
                                     <span class="input-group-text text-white bg--base" id="basic-addon2">USD</span>
                                 </div>
                                 <small class="form-text text-muted"><i class="fas fa-info-circle mr-2"></i>Minimum: 1 USD | Maximum: 500.00 USD | <span class="text-warning">Win Amount  1  %</span></small>
-                            </div>
+                            </div>    
                             <div class="form-group mt-4 mt-sm-5 justify-content-center d-flex flex-wrap justify-content-between">
-                                <div class="single-select head gmimg active">
+                            <div class="single-select head gmimg" data-choice="heads">
                                     <img src="/assets/images/game/head.png" alt="game-image">
                                 </div>
-                                <div class="single-select tail gmimg">
+                                <div class="single-select tail gmimg" data-choice="tails">
                                     <img src="/assets/images/game/tail.png" alt="game-image">
                                 </div>
                             </div>
                             <div class="mt-5 text-center">
-                                <button type="submit" class="cmn--btn active w-100 text-center">Play Now</button>
+                                <button type="button" click="play()" id="flipButton" class="cmn--btn active w-100 text-center">Play Now</button>
                                 <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="mt-3 btn btn-link btn--sm radius-5">Game Instruction <i class="las la-info-circle"></i></a>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
-
-    <!-- Game Section Starts Here -->
-    <section class="game-section padding-top padding-bottom bg_img" style="background: url(/assets/images/game/bg3.jpg);">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-6">
-                    <div class="section-header text-center">
-                        <h2 class="section-header__title">You may Also Like</h2>
-                        <p>Id temporibus blanditiis culpa laborum debitis ex et libero corrupti, recusandae ab voluptate? Magni, impedit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-4 justify-content-center">
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
-                    <div class="game-item">
-                        <div class="game-inner">
-                            <div class="game-item__thumb">
-                                <img src="/assets/images/game/item2.png" alt="game">
-                            </div>
-                            <div class="game-item__content">
-                                <h4 class="title">Roulette</h4>
-                                <p class="invest-info">Invest Limit</p>
-                                <p class="invest-amount">$10.49 - $1,000</p>
-                                <a href="#0" class="cmn--btn active btn--md radius-0">Play Now</a>
-                            </div>
-                        </div>
-                        <div class="ball"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
-                    <div class="game-item">
-                        <div class="game-inner">
-                            <div class="game-item__thumb">
-                                <img src="/assets/images/game/item1.png" alt="game">
-                            </div>
-                            <div class="game-item__content">
-                                <h4 class="title">Zero To Ninty</h4>
-                                <p class="invest-info">Invest Limit</p>
-                                <p class="invest-amount">$10.49 - $1,000</p>
-                                <a href="#0" class="cmn--btn active btn--md radius-0">Play Now</a>
-                            </div>
-                        </div>
-                        <div class="ball"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
-                    <div class="game-item">
-                        <div class="game-inner">
-                            <div class="game-item__thumb">
-                                <img src="/assets/images/game/item3.png" alt="game">
-                            </div>
-                            <div class="game-item__content">
-                                <h4 class="title">Number Buy</h4>
-                                <p class="invest-info">Invest Limit</p>
-                                <p class="invest-amount">$10.49 - $1,000</p>
-                                <a href="#0" class="cmn--btn active btn--md radius-0">Play Now</a>
-                            </div>
-                        </div>
-                        <div class="ball"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
-                    <div class="game-item">
-                        <div class="game-inner">
-                            <div class="game-item__thumb">
-                                <img src="/assets/images/game/item4.png" alt="game">
-                            </div>
-                            <div class="game-item__content">
-                                <h4 class="title">Roulette</h4>
-                                <p class="invest-info">Invest Limit</p>
-                                <p class="invest-amount">$10.49 - $1,000</p>
-                                <a href="#0" class="cmn--btn active btn--md radius-0">Play Now</a>
-                            </div>
-                        </div>
-                        <div class="ball"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Game Section Ends Here -->
-
 
     <div class=" modal custom--modal fade show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"  aria-modal="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -160,4 +78,8 @@
     </div>
 @endsection
 
-    
+<script>
+    function play() {
+        alert('Play Now button working');
+    }
+</script>

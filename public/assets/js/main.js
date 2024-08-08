@@ -259,32 +259,58 @@ const numbers = [
   0, 26, 3, 35, 12, 28, 7, 29, 18, 22, 9, 31, 14, 20, 1, 33, 16, 24, 5, 10, 23, 8, 30, 11, 36, 13, 27, 6, 34, 17, 25, 2, 21, 4, 19, 15, 32
 ];
 
-document.getElementById('spin-button').addEventListener('click', function() {
-  let totalRotation, wheel, index, segmentAngle, chosenAngle;
-  const chosenNumber = parseInt(document.getElementById('chosen-number').value);
-  if (isNaN(chosenNumber) || chosenNumber < 0 || chosenNumber > 36) {
-    alert('Please enter a valid number between 0 and 36.');
-    return;
-  }
+$(document).ready(function() {
+  const spinBtn = $('#spin-button'), flipButton = $('#flipButton'), coinsWrapper = $('.coins-wrapper');
+  setInterval(() => {
+    spinBtn.click();
+    flipButton.click();
+  },30000);
 
-  wheel = document.getElementById('wheel');
-  index = numbers.indexOf(chosenNumber);
-  segmentAngle = 360 / numbers.length;
-  chosenAngle = index * segmentAngle;
+  spinBtn.on('click', function() {
+    let totalRotation, wheel, index, segmentAngle, chosenAngle;
+    const chosenNumber = Math.floor(Math.random() * 37);
+    
+    if (isNaN(chosenNumber) || chosenNumber < 0 || chosenNumber > 36) {
+      alert('Please enter a valid number between 0 and 36.');
+      return;
+    }
 
-  totalRotation = (360 * 4) + chosenAngle;
+    wheel = $('#wheel');
+    index = numbers.indexOf(chosenNumber);
+    segmentAngle = 360 / numbers.length;
+    chosenAngle = index * segmentAngle;
 
-  wheel.style.transition = 'transform 4s ease-out';
-  wheel.style.transform = `rotate(${totalRotation}deg)`;
-  
-  setTimeout(() => {
-    alert("winning number was:"+chosenNumber);
-      wheel.style.transition = '';
-      wheel.style.transform = '';
+    totalRotation = (360 * 4) + chosenAngle;
+
+    wheel.css('transition', 'transform 4s ease-out');
+    wheel.css('transform', `rotate(${totalRotation}deg)`);
+    
+    setTimeout(function() {
+      alert("winning number was:" + chosenNumber);
+      wheel.css('transition', '');
+      wheel.css('transform', '');
       totalRotation = 0;
-      document.getElementById('chosen-number').value = ''
-  },5000)
+    }, 5000);
+  });
+
+  let isFlipping = false;
+  
+  flipButton.on('click', function(event) { 
+    event.preventDefault();
+    if (isFlipping) return; 
+
+    isFlipping = true;
+    coinsWrapper.css('animation', 'coin-rotate 2s linear infinite');
+    
+    setTimeout(function() { 
+      const result = Math.random() < 0.5 ? 'heads' : 'tails';
+      if (result === 'heads') { 
+        coinsWrapper.css('transform', 'rotateY(0deg)');
+      } else {
+        coinsWrapper.css('transform', 'rotateY(180deg)');
+      }
+      coinsWrapper.css('animation', ''); 
+      isFlipping = false;
+    }, 2000);
+  });
 });
-
-
-

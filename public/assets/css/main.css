@@ -4530,7 +4530,6 @@ iframe {
    }
   }
   
-
 .game {
     display: flex;
     flex-direction: column;
@@ -4538,9 +4537,9 @@ iframe {
 }
 
 .wheel-container {
-    position: relative;
-    width: 600px;
-    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wheel {
@@ -4557,22 +4556,26 @@ iframe {
 }
 
 .pointer {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -92.4%);
     width: 650px;
     height: 650px;
 }
 
 .pointer-image {
-    width: 100%;
-    height: 100%;
+    width: 650px;
+    height: 650px;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.table-btn {
+    width: 60px;  
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+  

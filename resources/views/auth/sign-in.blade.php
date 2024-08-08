@@ -23,17 +23,18 @@
             <div class="account__main__wrapper">
                 <div class="account__form__wrapper">
                     <div class="logo"><a href="/index"><img src="assets/images/logo.png" alt="logo"></a></div>
-                    <form class="account__form form row g-4">
+                    <form class="account__form form row g-4" method="POST" action="{{ route('sign-in') }}">
+                    @csrf
                         <div class="col-12">
                             <div class="form-group">
-                                <div for="username" class="input-pre-icon"><i class="las la-user"></i></div>
-                                <input id="username" type="text" class="form--control form-control style--two" placeholder="Username" required>
+                                <div for="email" class="input-pre-icon"><i class="las la-user"></i></div>
+                                <input id="email" type="text" class="form--control form-control style--two" placeholder="email" name="email"  required>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <div for="pass" class="input-pre-icon"><i class="las la-lock"></i></div>
-                                <input id="pass" type="password" class="form--control form-control style--two" placeholder="Password" required>
+                                <div for="password" class="input-pre-icon"><i class="las la-lock"></i></div>
+                                <input id="password" type="password" class="form--control form-control style--two" placeholder="Password" name="password" required>
                             </div>
                         </div>
                         <div class="col-12">

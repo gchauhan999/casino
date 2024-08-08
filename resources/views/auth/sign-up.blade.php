@@ -22,51 +22,52 @@
             <div class="account__main__wrapper">
                 <div class="account__form__wrapper sign-up">
                     <div class="logo"><a href="/index"><img src="assets/images/logo.png" alt="logo"></a></div>
-                    <form class="account__form form row g-4">
+                    <form class="account__form form row g-4" method="POST" action="{{ route('sign-up') }}" enctype= "multipart/form-data">
+                        @csrf
                         <div class="col-xl-6 col-md-6">
                             <div class="form-group">
-                                <div for="fname" class="input-pre-icon"><i class="las la-user"></i></div>
-                                <input id="fname" type="text" class="form--control form-control style--two" placeholder="Frist Name" required>
+                                <div for="firstname" class="input-pre-icon"><i class="las la-user"></i></div>
+                                <input id="firstname" type="text" class="form--control form-control style--two" placeholder="Frist Name"  name="firstname"  required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="form-group">
-                                <div for="lname" class="input-pre-icon"><i class="las la-user"></i></div>
-                                <input id="lname" type="text" class="form--control form-control style--two" placeholder="Last Name" required>
+                                <div for="lastname" class="input-pre-icon"><i class="las la-user"></i></div>
+                                <input id="lastname" type="text" class="form--control form-control style--two" placeholder="Last Name" name="lastname" required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="form-group">
                                 <div for="country" class="input-pre-icon"><i class="las la-globe"></i></div>
-                                <select class="form-select form--control style--two">
+                                <select class="form-select form--control style--two" name="country_name">
                                     <option>Bangladesh</option>
-                                    <option>India</option>
+                                    <option selected>India</option>
                                     <option>Pakistan</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="input-group">
-                                <span class="input-group-text text--base style--two">+80</span>
-                                <input type="text" class="form--control form-control style--two" placeholder="Phone Number">
+                                <span class="input-group-text text--base style--two">+91</span>
+                                <input type="text" id="phone_number"  class="form--control form-control style--two" placeholder="Phone Number" name="phone_number" required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="form-group">
                                 <div for="email" class="input-pre-icon"><i class="las la-envelope"></i></div>
-                                <input id="email" type="email" class="form--control form-control style--two" placeholder="Email" required>
+                                <input id="email" type="email" class="form--control form-control style--two" placeholder="Email" name="email" required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="form-group">
                                 <div for="username" class="input-pre-icon"><i class="las la-user"></i></div>
-                                <input id="username" type="text" class="form--control form-control style--two" placeholder="Username" required>
+                                <input id="username" type="text" class="form--control form-control style--two" placeholder="Username" name="username" required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="form-group">
                                 <div for="pass" class="input-pre-icon"><i class="las la-lock"></i></div>
-                                <input id="pass" type="password" class="form--control form-control style--two" placeholder="Password" required>
+                                <input id="pass" type="password" class="form--control form-control style--two" placeholder="Password" name="password" required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
